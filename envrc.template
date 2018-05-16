@@ -1,2 +1,4 @@
 export FLASK_APP=microblog
 export FLASK_DEBUG=1
+
+layout python3

@@ -5,3 +5,4 @@ logs/*
 *.log
 app.db
 .envrc
+.direnv/
