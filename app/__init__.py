@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_mail import Mail
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
@@ -9,6 +10,7 @@ import os
 
 app = Flask(__name__)
 app.config.from_object(Config)
+mail = Mail(app)
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
@@ -46,4 +48,4 @@ if not app.debug:
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog startup')
 
-from app import routes, models, errors
+from app import routes, models, errors, email
